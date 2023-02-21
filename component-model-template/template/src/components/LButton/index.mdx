@@ -1,0 +1,24 @@
+---
+name: Button
+menu: BasicComponents
+---
+import { Playground } from 'docz'
+import { LButton, setDoczAttribute } from '../index'
+
+# Button
+
+## Basic usage
+
+<Playground>
+ {() => {
+   React.useEffect(()=>{
+    setDoczAttribute('dark');
+   }, [])
+    return (
+      <>
+         <LButton onClick={() => { alert("You clicked me"); }}>Click me</LButton>
+      </>
+    )
+  }}
+ 
+</Playground>

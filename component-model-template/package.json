@@ -1,0 +1,13 @@
+{
+  "name": "@glen-tool/component-model",
+  "version": "1.0.11",
+  "description": "repo for developing conponent, consider it as cli",
+  "main": "index.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "glen <1043075409@qq.com>",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
+}
