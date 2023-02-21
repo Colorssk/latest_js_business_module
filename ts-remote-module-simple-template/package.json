@@ -1,0 +1,11 @@
+{
+  "name": "@glen-tool/ts-module-remote-simple",
+  "version": "1.0.0",
+  "description": "remote simple module with ts",
+  "main": "index.js",
+  "author": "colorssk",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
+}
