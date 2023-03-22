@@ -2,23 +2,25 @@
   "name": "<%= className %>",
   "appGroupName": "<%= className %>",
   "fileService": "<%= fileService %>",
+  "isUnpkg": <%= isUnpkg %>,
+  "version": "<%= version %>",
   "main": "hel_proxy/entry.js",
   "module": "hel_proxy_es/entry.js",
   "types": "lib/entrance/libTypes.ts",
-  "unpkg": "hel_dist/entry.js",
-  "version": "<%= version %>",
+  "unpkg": "hel_dist/index.html",
   "dependencies": {
-    "hel-lib-proxy": "^3.9.3",
-    "hel-micro": "^3.9.3",
+    "hel-lib-proxy": "3.13.0",
+    "hel-micro": "3.13.12",
     "react": ">=16.8.0",
-    "react-app-polyfill": "^3.0.0",
+    "react-app-polyfill": ">=1.0.0",
     "react-dom": ">=16.8.0",
-    "replace-absolute-path": "^1.0.1"
+    "scheduler": ">=0.23.0"
   },
   "peerDependencies": {
     "react": ">=16.8.0",
-    "react-app-polyfill": "^3.0.0",
-    "react-dom": ">=16.8.0"
+    "react-app-polyfill": ">=1.0.0",
+    "react-dom": ">=16.8.0",
+    "scheduler": ">=0.23.0"
   },
   "devDependencies": {
     "@babel/core": "^7.16.0",
@@ -27,10 +29,7 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.11.56",
-    "@types/react": "^18.0.18",
-    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/parser": "^5.36.1",
     "babel-jest": "^27.4.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-named-asset-import": "^0.3.8",
@@ -48,7 +47,7 @@
     "eslint-webpack-plugin": "^3.1.1",
     "file-loader": "^6.2.0",
     "fs-extra": "^10.0.0",
-    "hel-dev-utils": "2.3.6",
+    "hel-dev-utils": "3.0.4",
     "html-webpack-plugin": "^5.5.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.4.3",
@@ -63,8 +62,10 @@
     "prompts": "^2.4.2",
     "react-dev-utils": "^12.0.1",
     "react-refresh": "^0.11.0",
+    "replace-absolute-path": "^1.0.1",
     "resolve": "^1.20.0",
     "resolve-url-loader": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript": "^1.0.1",
     "sass-loader": "^12.3.0",
     "semver": "^7.3.5",
@@ -72,7 +73,7 @@
     "style-loader": "^3.3.1",
     "tailwindcss": "^3.0.2",
     "terser-webpack-plugin": "^5.2.5",
-    "typescript": "~4.8.2",
+    "typescript": "^4.8.2",
     "web-vitals": "^2.1.4",
     "webpack": "^5.64.4",
     "webpack-dev-server": "^4.6.0",
@@ -87,16 +88,22 @@
     "build": "npm run check_name && npm run build_dist && npm run build_meta && npm run build_proxy",
     "check_name": "node scripts/check.js",
     "build_dist": "node scripts/build.js",
-    "build_meta": "node scripts/meta.js",
-    "build_proxy": "npm run build_proxy_umd && npm run build_proxy_es && cp ./hel_proxy/entry.js ./hel_dist",
+    "build_proxy": "npm run build_proxy_umd && npm run build_proxy_es",
     "build_proxy_umd": "tsc & node ./scripts/replaceToRelativePath.js & rollup -c",
     "build_proxy_es": "tsc & node ./scripts/replaceToRelativePath.js & cross-env BUILD_ENV=es rollup -c",
     "lint": "eslint ./src --ext ts,tsx",
     "lintfix": "eslint ./src --ext ts,tsx --fix",
+    "build_meta": "node scripts/meta.js",
+    "set_home_page": "cross-env-shell HEL_APP_HOME_PAGE=http://127.0.0.1:8080",
     "build_cust": "npm run set_home_page \"npm run build_dist && npm run build_meta\"",
-    "set_home_page": "cross-env-shell HEL_APP_HOME_PAGE=http://127.0.0.1:3103",
     "test": "jest",
     "snap": "jest -u"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
   "browserslist": {
     "production": [
@@ -122,7 +129,7 @@
     "lib",
     "src",
     "README.md",
-    "tsconfig.json",
+    "jsconfig.json",
     "scripts"
   ]
 }

@@ -1,0 +1,11 @@
+{
+  "name": "@glen-tool/js-remote-module-template",
+  "version": "1.0.0",
+  "description": "remote js module",
+  "main": "index.js",
+  "author": "colorssk",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
+}
