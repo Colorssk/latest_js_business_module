@@ -1,0 +1,11 @@
+{
+  "name": "@glen-tool/ts-remote-lib-template",
+  "version": "1.0.0",
+  "description": "remote ts lib, recommand nodejs: 16.14.0",
+  "main": "index.js",
+  "author": "colorssk",
+  "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  }
+}
