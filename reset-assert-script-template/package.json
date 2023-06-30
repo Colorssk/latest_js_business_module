@@ -1,0 +1,12 @@
+{
+    "name": "@glen-tool/reset-assert-script-template",
+    "version": "1.0.0",
+    "description": "script template to cope with loading local assets instead of ali font assert",
+    "main": "index.js",
+    "author": "colorssk",
+    "license": "ISC",
+    "publishConfig": {
+      "access": "public"
+    }
+  }
+  
