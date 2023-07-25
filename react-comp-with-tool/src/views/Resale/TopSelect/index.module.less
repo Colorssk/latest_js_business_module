@@ -1,0 +1,362 @@
+.selectSearch {
+  border: 2px solid #1d303f;
+  height: 150px;
+  flex: 0;
+  position: relative;
+
+  .seleToptime {
+    background-color: #1d303f;
+    display: flex;
+    padding: 5px;
+    justify-content: flex-start;
+    align-items: center;
+
+    button {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+
+    // 右上角的input
+    .SearchTopRight {
+      width: 280px;
+      position: relative;
+      margin-left: auto;
+      padding-top: 4px;
+      // height: 24px;
+     
+
+      .myInput {
+        width: 100%;
+        border: none;
+        margin: 0;
+
+        :global {
+          .ant-select-selector {
+            background-color: rgb(73, 74, 77);
+            border: 0;
+            padding-left: 4px;
+            font-size: 12px;
+            height: 24px;
+            // color: #bfbfbf;
+            .ant-select-selection-search{
+              left: 0;
+            }
+            
+            .ant-select-selection-search-input{
+              width: 280px;
+              height: 24px;
+              border-radius: 2px;
+
+              &:focus{
+                background-color: #FF9300;
+                padding-left: 8px;
+              }
+            }
+          }
+        }
+
+        .ant-select-selection__rendered {
+          line-height: 24px;
+          margin: 0;
+        }
+
+      }
+
+      .ant-input {
+        width: 160px;
+      }
+    }
+
+    .underlist {
+      z-index: 20;
+      top: 44px;
+      position: absolute;
+      right: 0;
+
+      :global {
+        .ant-btn[type="button"] {
+          color: #E0E0E0;
+          border: none;
+          line-height: 1.5;
+          cursor: pointer;
+          background: linear-gradient(#ff9300, #db701e) bottom;
+        }
+      }
+
+      .ant-select-selection {
+        height: auto !important;
+
+        li {
+          white-space: nowrap;
+          text-overflow: ellipsis;
+          width: 44px;
+          overflow: hidden;
+        }
+
+        li:nth-child(1) {
+          width: 60px;
+        }
+      }
+
+    }
+  }
+
+  .selectItem {
+    margin-top: 4px;
+    padding-bottom: 4px;
+
+    .topSpan {
+      background-color: #252525;
+      color: #5a5a5a;
+      display: inline-block;
+      min-width: 40px;
+      line-height: 20px;
+      padding: 0 10px;
+    }
+
+    &>span {
+      display: inline-block;
+      min-width: 40px;
+      margin-right: 10px;
+      color: #ffffff;
+      font-size: 12px;
+      text-align: right;
+    }
+
+
+
+    :global {
+      .ss-Radio-wrap-group-vertical.ss-Radio-wrap-group {
+        display: contents;
+      }
+
+      .ant-radio-button-wrapper {
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        background-color: #000;
+        color: #ffffff;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .gInlineblock {
+    display: inline-block;
+  }
+
+  .webScokteAbsolute{
+    position: absolute;
+    background: rgba(24,144,113, 0.7);
+    bottom: -32px;
+    width: 100%;
+    height: 30px;
+    z-index: 1000;
+    text-align: center;
+    font-size: 14px;
+    line-height: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(221, 69, 23);
+  }
+}
+
+
+
+:global {
+  .underlist {
+    .ant-select-selection--multiple.ant-select-selection {
+      background-color: rgb(73, 74, 77);
+      border: 0;
+      padding-left: 4px;
+      font-size: 12px;
+
+      :focus {
+        background-color: transparent;
+      }
+    }
+
+  }
+  .ant-select-dropdown{
+      padding: 0;
+      background: #1d303f;
+      color: #bfbfbf;
+      :hover{
+        background: transparent;
+      }
+  }
+  .ant-select-item{
+    color: #bfbfbf;
+  }
+  .ant-select:hover .ant-select-clear{
+    border-radius: 50%;
+    opacity: 1;
+  }
+  .ant-select-item-option:hover{
+    background: #1b5683;
+  }
+  .oneSearchlist{
+    background: #1d303f;
+    padding: 0;
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 24px;
+
+   
+
+    &:hover{
+      background: #1b5683 !important;
+    }
+
+  }
+
+  // 查询按钮
+  .seleToptime>.ant-btn.ss-btn.ss-btn-yellow.ant-btn-primary {
+    color: #1e1e1e;
+    background-color: #ff9300;
+    border-color: #ff9300;
+  }
+
+  //主承销商样式
+  .ant-select-dropdown-menu {
+    background: #1d303f;
+    max-height: 250px;
+    margin-bottom: 0;
+    padding: 4px 0;
+    padding-left: 0;
+    overflow: auto;
+    list-style: none;
+    outline: none;
+  }
+
+  .ss-select-dropdown {
+    background: #1d303f;
+  }
+
+  .ss-select-dropdown .ant-select-dropdown-menu-item:hover {
+    background-color: #308376;
+  }
+
+  .ss-select-dropdown .ant-select-dropdown-menu-item {
+    padding: 0 10px;
+    color: #FFEBC8;
+    font-size: 12px;
+  }
+
+  .ant-select-selection--multiple .ant-select-selection__rendered>.ant-select-search--inline {
+    color: #1E1E1E;
+    background-color: transparent;
+    border-color: transparent;
+  }
+  .ant-select-selection__placeholder, .ant-select-search__field__placeholder{
+    position: absolute;
+    top: 50%;
+    right: 9px;
+    left: 0;
+    max-width: 100%;
+    height: 20px;
+    margin-top: -10px;
+    overflow: hidden;
+    color: #bfbfbf;
+    line-height: 20px;
+    white-space: nowrap;
+    text-align: left;
+    text-overflow: ellipsis;
+  }
+  .ant-select-selection__clear{
+    font-size: 12px;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+}
+
+// spin 样式
+.exampleSpin {
+  z-index: 8000;
+  display: block;
+  width: 100px;
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.exampleMask {
+  z-index: 3000;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 127px;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  top: 0;
+}
+
+//右上角样式
+.searchList{
+  background: #1d303f;
+  margin: 0;
+  padding: 0;
+  height: 24px;
+  line-height: 24px;
+  h3{
+    color: #ff9300;
+    font-size: 12px;
+  }
+  span{
+    cursor: pointer;
+    display: inline-block;
+    
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffffff;
+    font-size: 12px;
+    height: 24px;
+    line-height: 24px;
+  }
+  .leftSpan{
+    width: 30%;
+  }
+  .rightSpan{
+    width: 20%;
+  }
+}
+.oneSearchlist{
+  background: #1d303f;
+  padding: 0;
+  cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 24px;
+}
+.oneSearchlist:hover{
+  background:#1b5683 !important
+}
+.searchList:hover span{
+  background:#1b5683
+}
+:global{
+  //下拉框失焦不改变颜色
+  .ant-select-item-option-active:not(.ant-select-item-option-disabled){
+    background:transparent;
+  }
+}
